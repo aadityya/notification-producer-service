@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: notification-producer
+  name: notification-producer-with-binder
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: notification-producer
+      app: notification-producer-with-binder
   template:
     metadata:
       labels:
-        app: notification-producer
+        app: notification-producer-with-binder
     spec:
       containers:
         - name: app
-          image: notificationpoc.azurecr.io/notification-producer:latest
+          image: notificationpoc.azurecr.io/notification-producer-with-binder:latest
           ports:
-            - containerPort: 8080
+            - containerPort: 8081
           imagePullPolicy: Always
