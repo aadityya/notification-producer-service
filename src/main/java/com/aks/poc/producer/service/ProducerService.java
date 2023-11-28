@@ -21,6 +21,7 @@ public class ProducerService {
     public Notification sendMessage(Notification notification) throws Exception {
         log.info("Sending message");
         notification.setNotificationId(UUID.randomUUID().toString());
+        notification.setSdkUsed(new Notification().getSdkUsed());
         senderClient.sendMessage(new ServiceBusMessage(new Gson().toJson(notification)));
         senderClient.close();
         log.info("Sent message");
