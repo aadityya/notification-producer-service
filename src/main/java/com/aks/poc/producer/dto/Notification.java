@@ -4,6 +4,8 @@ public class Notification {
     private String notificationId;
     private String message;
 
+    private String sdkUsed = "azure-stream-binder-servicebus";
+
     public String getNotificationId() {
         return notificationId;
     }
@@ -18,5 +20,13 @@ public class Notification {
 
     public void setMessage(String message) {
         this.message = message;
+    }
+
+    public String getSdkUsed() {
+        return sdkUsed;
+    }
+
+    public void setSdkUsed(String sdkUsed) {
+        this.sdkUsed = sdkUsed;
     }
 }
